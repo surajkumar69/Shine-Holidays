@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageSquare, Phone, CalendarCheck, Sparkles } from 'lucide-react';
+import { Phone, CalendarCheck, Sparkles } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO } from '../data/fleetData';
 
 export default function CtaBanner() {
@@ -42,7 +43,7 @@ export default function CtaBanner() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-105"
               >
-                <MessageSquare className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4 text-white" />
                 <span>WhatsApp Now</span>
               </a>
 

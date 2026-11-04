@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageSquare, Menu, X, Shield, Clock } from 'lucide-react';
+import { Phone, Menu, X, Shield, Clock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO, NAV_LINKS } from '../data/fleetData';
 
 export default function Header() {
@@ -84,7 +85,7 @@ export default function Header() {
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
               aria-label="Chat on WhatsApp"
             >
-              <MessageSquare className="h-4 w-4 fill-white/20" />
+              <WhatsAppIcon className="h-5 w-5 text-white" />
             </a>
 
             <a
@@ -175,7 +176,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="btn-shimmer shadow-gold flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold text-[#16213E] w-full"
               >
-                <MessageSquare className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4 text-[#16213E]" />
                 <span>Book on WhatsApp</span>
               </a>
 

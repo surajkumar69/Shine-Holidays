@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { BusFront, UsersRound, ArrowRight, ChevronLeft, ChevronRight, Eye, Phone, MessageSquare } from 'lucide-react';
+import { BusFront, UsersRound, ArrowRight, ChevronLeft, ChevronRight, Eye, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import SectionHeader from './SectionHeader';
 import { SERVICES_FLEET, BUSINESS_INFO } from '../data/fleetData';
 import VehicleModal from './VehicleModal';
@@ -285,7 +286,7 @@ export default function Services({ onSelectVehicleForBooking }) {
                         className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all shadow-sm active:scale-95 cursor-pointer"
                         aria-label={`Book ${service.title} on WhatsApp`}
                       >
-                        <MessageSquare className="h-3.5 w-3.5 fill-white/20" />
+                        <WhatsAppIcon className="h-4 w-4 text-white" />
                         <span>WhatsApp</span>
                       </a>
 

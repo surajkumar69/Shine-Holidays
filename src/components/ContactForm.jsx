@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, ShieldCheck, Tag } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import SectionHeader from './SectionHeader';
 import { BUSINESS_INFO, SERVICES_FLEET } from '../data/fleetData';
 
@@ -349,7 +350,7 @@ export default function ContactForm() {
                       type="submit"
                       className="btn-shimmer shadow-gold flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold text-[#16213E] transition-all hover:shadow-lg cursor-pointer"
                     >
-                      <Send className="h-4 w-4" />
+                      <WhatsAppIcon className="h-4 w-4 text-[#16213E]" />
                       <span>Request Instant WhatsApp Quote</span>
                     </button>
                     <p className="mt-2.5 text-center text-[11px] text-[#16213E]/50">

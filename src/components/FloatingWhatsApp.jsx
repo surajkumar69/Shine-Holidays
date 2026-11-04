@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageSquare, CalendarCheck, Phone } from 'lucide-react';
+import { CalendarCheck, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO } from '../data/fleetData';
 
 export default function FloatingWhatsApp() {
@@ -26,17 +27,17 @@ export default function FloatingWhatsApp() {
         <Phone className="h-5 w-5" />
       </a>
 
-      {/* Floating WhatsApp Action Button */}
+      {/* Floating Official WhatsApp Action Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp with SHINE HOLIDAYS"
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] hover:scale-105 active:scale-95 transition-all"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.55)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
       >
         {/* Soft pulsing halo */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
-        <MessageSquare className="h-7 w-7 fill-white/20 relative z-10" />
+        <WhatsAppIcon className="h-7 w-7 text-white relative z-10" />
       </a>
 
     </div>
