@@ -53,7 +53,7 @@ export const TRUST_BADGES = [
   "Bangalore & Mysore Dedicated Hubs"
 ];
 
-// Services / Fleet Cards (Notice: Bus category consolidated into Tempo Traveller per user request!)
+// Services / Fleet Cards
 export const SERVICES_FLEET = [
   {
     id: "urbania-12",
@@ -101,20 +101,21 @@ export const SERVICES_FLEET = [
   },
   {
     id: "tempo",
-    icon: "Bus",
-    title: "Tempo Traveller & Executive Luxury Coaches",
-    description: "Premium Maharaja Tempo Travellers and executive luxury coaches (12, 17, 20 & 26+ seaters) equipped with push-back seats, high-roof comfort, and chilled AC for plush group travel and wedding delegations.",
-    tags: ["Maharaja Traveller", "12 to 26+ Seater Coaches", "Executive Transit", "Wedding & Events"],
+    icon: "UsersRound",
+    title: "Tempo Traveller Maharaja",
+    description: "The Maharaja edition — a premium luxury traveller for plush group journeys equipped with reclining seats, ambient lighting, high-roof comfort, and individual AC vents.",
+    tags: ["Tempo Traveller Maharaja", "Plush Group Travel", "Bangalore & Mysore"],
     rate: "₹35 / KM Base",
     images: [
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=1200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.30_1_cdynzw.jpg",
+      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.29_2_d3nhau.jpg",
+      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.30_hhkhc9.jpg"
     ],
     features: [
-      "12, 17, 20 & 26+ Seating Options",
-      "High-Roof Pushback Comfort",
+      "Plush Reclining Maharaja Seats",
+      "High-Roof Walk-In Comfort",
       "Chilled Dual AC System",
-      "Ideal for Large Groups & Events"
+      "Generous Luggage Space"
     ]
   },
   {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BusFront, Bus, Car, Route, Plane, ArrowRight, ChevronLeft, ChevronRight, Eye, Sparkles } from 'lucide-react';
+import { BusFront, UsersRound, Car, Route, Plane, ArrowRight, ChevronLeft, ChevronRight, Eye, Sparkles } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { SERVICES_FLEET, BUSINESS_INFO } from '../data/fleetData';
 import VehicleModal from './VehicleModal';
@@ -12,8 +12,8 @@ export default function Services({ onSelectVehicleForBooking }) {
     switch (iconName) {
       case 'BusFront':
         return <BusFront className="h-5 w-5" />;
-      case 'Bus':
-        return <Bus className="h-5 w-5" />;
+      case 'UsersRound':
+        return <UsersRound className="h-5 w-5" />;
       case 'Car':
         return <Car className="h-5 w-5" />;
       case 'Route':

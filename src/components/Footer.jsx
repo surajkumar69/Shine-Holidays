@@ -84,7 +84,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Col 3: Popular Services (Bus removed, integrated into Tempo Traveller) */}
+        {/* Col 3: Popular Services */}
         <div>
           <h4 className="font-display text-xl font-semibold text-white">
             Popular Services

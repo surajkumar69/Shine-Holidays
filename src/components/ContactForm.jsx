@@ -309,7 +309,7 @@ export default function ContactForm() {
                     {errors.date && <span className="text-[11px] text-red-500 mt-1 block">{errors.date}</span>}
                   </div>
 
-                  {/* Vehicle Type Selection (Strictly Updated: Bus removed, merged under Tempo Traveller) */}
+                  {/* Vehicle Type Selection */}
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-[#16213E]/60 mb-1.5">
                       Vehicle Type *
