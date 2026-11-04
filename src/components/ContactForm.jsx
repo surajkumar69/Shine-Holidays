@@ -190,7 +190,7 @@ export default function ContactForm() {
                   rel="noopener noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 text-sm font-semibold text-white shadow-soft transition hover:brightness-105"
                 >
-                  <MessageSquare className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4 text-white" />
                   <span>WhatsApp</span>
                 </a>
 

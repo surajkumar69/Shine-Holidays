@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, Shield, Users, Wind, Tv, ChevronLeft, ChevronRight, MessageSquare, ArrowRight } from 'lucide-react';
+import { X, Check, Shield, Users, Wind, Tv, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO } from '../data/fleetData';
 
 export default function VehicleModal({ vehicle, onClose, onBookNow }) {
@@ -219,7 +220,7 @@ export default function VehicleModal({ vehicle, onClose, onBookNow }) {
                 onClick={handleWhatsAppBooking}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#E5C378] to-[#B89329] text-black font-semibold text-xs uppercase tracking-wider shadow-lg shadow-[#D4AF37]/30 hover:brightness-110 transition-all cursor-pointer font-medium"
               >
-                <MessageSquare className="w-4 h-4 fill-black/20" />
+                <WhatsAppIcon className="w-4 h-4 text-black" />
                 <span>Reserve on WhatsApp</span>
               </button>
 

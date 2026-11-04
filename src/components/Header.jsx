@@ -71,7 +71,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="btn-shimmer shadow-gold flex items-center gap-2 rounded-full px-5 py-2 text-xs xl:text-sm font-bold text-[#16213E] transition-all hover:shadow-lg"
             >
-              <MessageSquare className="h-4 w-4 text-[#16213E]" />
+              <WhatsAppIcon className="h-4 w-4 text-[#16213E]" />
               <span>Book Now</span>
             </a>
           </div>

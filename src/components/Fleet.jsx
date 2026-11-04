@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Wind, Check, MessageSquare, ChevronRight, Eye, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
-import { FLEET_VEHICLES, BUSINESS_INFO } from '../data/fleetData';
+import { SERVICES_FLEET as FLEET_VEHICLES, BUSINESS_INFO } from '../data/fleetData';
 import VehicleModal from './VehicleModal';
 
 export default function Fleet({ onSelectVehicle }) {
