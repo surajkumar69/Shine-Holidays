@@ -328,20 +328,7 @@ export default function Services({ onSelectVehicleForBooking }) {
       {/* Vehicle Specification Modal if triggered */}
       {selectedModalVehicle && (
         <VehicleModal
-          vehicle={{
-            title: selectedModalVehicle.title,
-            seating: selectedModalVehicle.tags[0].split(' ')[0],
-            mainImage: {
-              url: selectedModalVehicle.coverImage,
-              alt: selectedModalVehicle.title
-            },
-            additionalImages: selectedModalVehicle.images.slice(1).map((imgUrl, i) => ({
-              url: imgUrl,
-              alt: `${selectedModalVehicle.title} view ${i+1}`,
-              title: i === 0 ? "Executive Cabin" : "Vehicle Profile",
-              caption: "Force Urbania authentic fleet coach with AC climate control and diamond leather seats."
-            }))
-          }}
+          vehicle={selectedModalVehicle}
           onClose={() => setSelectedModalVehicle(null)}
         />
       )}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Check, Sparkles, Shield, Compass } from 'lucide-react';
+import { ArrowRight, Check, Sparkles, Shield, Compass } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO, HERO_STATS, TRUST_BADGES } from '../data/fleetData';
 
 export default function Hero() {
@@ -73,7 +74,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-105"
             >
-              <MessageSquare className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4 text-white" />
               <span>WhatsApp Now</span>
             </a>
           </div>

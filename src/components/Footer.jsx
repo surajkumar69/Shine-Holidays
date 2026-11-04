@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, MessageSquare, ArrowUp, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, ShieldCheck, Clock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BUSINESS_INFO, NAV_LINKS, SERVICES_FLEET } from '../data/fleetData';
 
 export default function Footer() {
@@ -44,7 +45,7 @@ export default function Footer() {
               aria-label="WhatsApp SHINE HOLIDAYS"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-[#25D366] text-white"
             >
-              <MessageSquare className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4 text-white" />
             </a>
 
             <a

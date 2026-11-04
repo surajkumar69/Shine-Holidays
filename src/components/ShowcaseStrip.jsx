@@ -1,5 +1,6 @@
 import React from 'react';
-import { Check, MessageSquare, Phone, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, Phone, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import SectionHeader from './SectionHeader';
 import { BUSINESS_INFO } from '../data/fleetData';
 
@@ -122,7 +123,7 @@ export default function ShowcaseStrip() {
                 rel="noopener noreferrer"
                 className="btn-shimmer shadow-gold flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-[#16213E] transition-all"
               >
-                <MessageSquare className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4 text-[#16213E]" />
                 <span>Book on WhatsApp</span>
               </a>
 
