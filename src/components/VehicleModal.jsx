@@ -15,27 +15,40 @@ export default function VehicleModal({ vehicle, onClose, onBookNow }) {
 
   if (!vehicle) return null;
 
-  const allImages = [
-    {
-      url: vehicle.mainImage.url,
-      alt: vehicle.mainImage.alt,
-      title: 'Commercial Showroom Perspective',
-      caption: 'High-roof Force Urbania coach in metallic dark charcoal finish with signature LED projectors.',
-      isAi: true,
-    },
-    ...vehicle.additionalImages.map((img) => ({
-      url: img.url,
-      alt: img.alt,
-      title: img.title,
-      caption: img.caption,
-      isAi: false,
-    })),
-  ];
+  const allImages = (vehicle.images && vehicle.images.length > 0)
+    ? vehicle.images.map((imgUrl, i) => {
+        const url = typeof imgUrl === 'string' ? imgUrl : imgUrl.url;
+        let title = 'Complete Side Profile';
+        let caption = 'Original Force Urbania luxury coach side view in metallic dark charcoal finish.';
+        if (i === 1) {
+          title = 'Plush Diamond Leather Seating';
+          caption = 'Handcrafted diamond-quilted leather recliners with Shine Holidays embroidered headrests.';
+        } else if (i === 2) {
+          title = 'Executive Cabin Ambiance';
+          caption = 'Panoramic tinted windows, personal AC vents, and ambient starlight roof.';
+        }
+        return {
+          url,
+          alt: `${vehicle.title} photo ${i + 1}`,
+          title,
+          caption,
+          isAi: false
+        };
+      })
+    : [
+        {
+          url: vehicle.coverImage || '/images/fleet/urbania/main-side-view.jpg',
+          alt: vehicle.title,
+          title: 'Complete Side Profile',
+          caption: 'Original Force Urbania luxury coach.',
+          isAi: false
+        }
+      ];
 
-  const currentImage = allImages[activeImageIndex];
+  const currentImage = allImages[activeImageIndex] || allImages[0];
 
   const handleWhatsAppBooking = () => {
-    const message = `Hello SHINE HOLIDAYS, I would like to reserve the ${vehicle.title} at ₹35/KM. Please share availability and estimate.`;
+    const message = `Hello SHINE HOLIDAYS, I would like to reserve the ${vehicle.title} at ${vehicle.rate || '₹35/KM'}. Please share availability and estimate.`;
     window.open(`${BUSINESS_INFO.whatsappBaseUrl}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -82,18 +95,28 @@ export default function VehicleModal({ vehicle, onClose, onBookNow }) {
           <div className="lg:col-span-7 space-y-4">
             
             {/* Main Active Photo */}
-            <div className="relative h-[280px] sm:h-[380px] rounded-2xl overflow-hidden bg-black border border-white/10 group">
+            <div className="relative h-[280px] sm:h-[380px] rounded-2xl overflow-hidden bg-[#0A0D14] border border-white/10 group flex items-center justify-center">
+              {activeImageIndex === 0 && (
+                <img
+                  src={currentImage.url}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none"
+                />
+              )}
               <img
                 src={currentImage.url}
                 alt={currentImage.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className={`relative z-10 w-full h-full ${
+                  activeImageIndex === 0 ? 'object-contain p-4' : 'object-cover'
+                } transition-transform duration-500 group-hover:scale-105`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none"></div>
 
               {/* Prev / Next controls */}
               <button
                 onClick={() => setActiveImageIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black text-white border border-white/20 transition-all"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black text-white border border-white/20 transition-all"
                 aria-label="Previous photo"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -101,16 +124,16 @@ export default function VehicleModal({ vehicle, onClose, onBookNow }) {
 
               <button
                 onClick={() => setActiveImageIndex((prev) => (prev + 1) % allImages.length)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black text-white border border-white/20 transition-all"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black text-white border border-white/20 transition-all"
                 aria-label="Next photo"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
 
               {/* Tag / Badge */}
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-20">
                 <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
-                  {currentImage.isAi ? 'Automotive Visual' : 'Authentic Cabin Photo'}
+                  {activeImageIndex === 0 ? 'Complete Side Profile' : 'Authentic Cabin Photo'}
                 </span>
               </div>
 

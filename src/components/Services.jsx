@@ -63,6 +63,7 @@ export default function Services({ onSelectVehicleForBooking }) {
             const currentImgIdx = activeImageIndexes[service.id] || 0;
             const images = service.images || [service.coverImage];
             const hasMultipleImages = images.length > 1;
+            const isSideView = currentImgIdx === 0 && (service.id === 'urbania-12' || service.id === 'urbania-16');
 
             return (
               <div
@@ -72,16 +73,28 @@ export default function Services({ onSelectVehicleForBooking }) {
                 {/* Floating Glow on Card Hover */}
                 <span className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#D4AF37]/15 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                {/* Card Top: Image Carousel */}
-                <div className="relative h-60 w-full overflow-hidden bg-slate-100">
+                {/* Card Top: Image Carousel with Responsive contain/cover fitting */}
+                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-[#0A0D15] flex items-center justify-center">
+                  {/* Ambient backdrop for complete side-view containment */}
+                  {isSideView && (
+                    <img
+                      src={images[currentImgIdx]}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 h-full w-full object-cover blur-xl opacity-35 scale-110 pointer-events-none"
+                    />
+                  )}
+
                   <img
                     src={images[currentImgIdx]}
                     alt={`${service.title} photograph ${currentImgIdx + 1}`}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`relative z-10 h-full w-full ${
+                      isSideView ? 'object-contain p-2 sm:p-3' : 'object-cover'
+                    } transition-transform duration-700 group-hover:scale-105`}
                   />
 
                   {/* Gradient Bottom Shading */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
                   {/* Top-Right Category Floating Glass Badge */}
                   <div className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-2xl glass-dark text-[#E6C35C] shadow-lg">
@@ -92,6 +105,15 @@ export default function Services({ onSelectVehicleForBooking }) {
                   {service.rate && (
                     <div className="absolute left-4 top-4 z-20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#16213E] shadow-sm border border-[#D4AF37]/40">
                       {service.rate}
+                    </div>
+                  )}
+
+                  {/* View Type Badge (Full Side View vs Luxury Interior) */}
+                  {hasMultipleImages && (
+                    <div className="absolute bottom-3 left-4 z-20 pointer-events-none">
+                      <span className="px-2.5 py-0.5 rounded-md text-[10px] font-semibold tracking-wide uppercase bg-black/65 text-[#E6C35C] border border-[#D4AF37]/35 backdrop-blur-md shadow-xs">
+                        {currentImgIdx === 0 ? 'Full Side View' : 'Luxury Interior'}
+                      </span>
                     </div>
                   )}
 
@@ -114,7 +136,7 @@ export default function Services({ onSelectVehicleForBooking }) {
                       </button>
 
                       {/* Pagination Indicator Dots */}
-                      <div className="absolute bottom-3 left-0 right-0 z-20 flex justify-center gap-1.5 pointer-events-none">
+                      <div className="absolute bottom-3 right-4 z-20 flex justify-end gap-1.5 pointer-events-none">
                         {images.map((_, dotIdx) => (
                           <span
                             key={dotIdx}

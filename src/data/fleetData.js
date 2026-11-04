@@ -62,13 +62,13 @@ export const SERVICES_FLEET = [
     description: "Force Urbania 12+1 AC luxury coach with individual diamond-quilted leather recliners, personal AC vents, ambient starlight lighting, and generous boot space.",
     tags: ["12+1 Seater", "Plush Recliners", "₹35 / KM", "Bangalore & Mysore"],
     rate: "₹35 / KM",
-    // Main photo: AI-generated visual matching vehicle color
-    coverImage: "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
-    // Additional authentic uploaded photos
+    // Main photo: Original complete side-view photograph (identical in both Urbania cards)
+    coverImage: "/images/fleet/urbania/main-side-view.jpg",
+    // Interior photos from uploaded collection
     images: [
-      "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
+      "/images/fleet/urbania/main-side-view.jpg",
       "/images/fleet/urbania-12/interior-leather-seats.jpg",
-      "/images/fleet/urbania-12/exterior-front-view.jpg"
+      "/images/fleet/urbania-12/interior-night-starlight.jpg"
     ],
     features: [
       "12 Passengers + 1 Chauffeur",
@@ -84,11 +84,11 @@ export const SERVICES_FLEET = [
     description: "Spacious 16+1 Force Urbania luxury coach designed for corporate delegations, family vacationers, and group tours with wide central walk-through aisle.",
     tags: ["16+1 Seater", "Executive Aisle", "₹35 / KM", "Bangalore & Mysore"],
     rate: "₹35 / KM",
-    // Main photo: AI-generated visual matching vehicle color
-    coverImage: "/images/fleet/urbania-16/cover-ai-urbania-16.jpg",
-    // Additional authentic uploaded photos
+    // Main photo: EXACT SAME original complete side-view photograph
+    coverImage: "/images/fleet/urbania/main-side-view.jpg",
+    // Additional authentic uploaded interior photos
     images: [
-      "/images/fleet/urbania-16/cover-ai-urbania-16.jpg",
+      "/images/fleet/urbania/main-side-view.jpg",
       "/images/fleet/urbania-16/interior-executive-aisle.jpg",
       "/images/fleet/urbania-16/interior-smart-cockpit.jpg"
     ],
@@ -258,10 +258,10 @@ export const FOUR_STEPS = [
 export const GALLERY_ITEMS = [
   {
     id: "gal-1",
-    url: "/images/gallery/ambient-night-starlight.jpg",
-    title: "Night Starlight Lounge & Ambient LED Lighting",
-    category: "Interior Ambiance",
-    alt: "Urbania interior with blue ambient LED illumination and star ceiling"
+    url: "/images/about/about-urbania-villa.jpg",
+    title: "Executive Arrival at Private Villa & Resort",
+    category: "Arrival Stance",
+    alt: "Metallic charcoal Force Urbania parked in front of scenic private villa"
   },
   {
     id: "gal-2",
@@ -272,10 +272,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: "gal-3",
-    url: "/images/gallery/exterior-side-profile.jpg",
-    title: "Metallic Charcoal Grey Coachline",
-    category: "Automotive Stance",
-    alt: "Side profile of Force Urbania in metallic dark charcoal grey"
+    url: "/images/fleet/urbania-12/exterior-front-view.jpg",
+    title: "Iconic Projector Headlamps & Festive Front Stance",
+    category: "Front Profile",
+    alt: "Front stance of Shine Holidays Urbania coach with signature projector headlights"
   },
   {
     id: "gal-4",
