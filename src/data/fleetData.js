@@ -60,7 +60,7 @@ export const SERVICES_FLEET = [
     icon: "BusFront",
     title: "Force Urbania 12+1 Luxury Coach",
     description: "Force Urbania 12+1 AC luxury coach with individual diamond-quilted leather recliners, personal AC vents, ambient starlight lighting, and generous boot space.",
-    tags: ["12+1 Seater", "Maharaja Recliners", "₹35 / KM", "Bangalore & Mysore"],
+    tags: ["12+1 Seater", "Plush Recliners", "₹35 / KM", "Bangalore & Mysore"],
     rate: "₹35 / KM",
     // Main photo: AI-generated visual matching vehicle color
     coverImage: "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
@@ -102,17 +102,16 @@ export const SERVICES_FLEET = [
   {
     id: "tempo",
     icon: "UsersRound",
-    title: "Tempo Traveller Maharaja",
-    description: "The Maharaja edition — a premium luxury traveller for plush group journeys equipped with reclining seats, ambient lighting, high-roof comfort, and individual AC vents.",
-    tags: ["Tempo Traveller Maharaja", "Plush Group Travel", "Bangalore & Mysore"],
-    rate: "₹35 / KM Base",
+    title: "Tempo Traveller",
+    description: "Premium luxury Tempo Traveller for comfortable group journeys equipped with plush reclining seats, ambient cabin lighting, high-roof walk-in comfort, and individual AC vents.",
+    tags: ["Tempo Traveller", "Plush Group Travel", "₹35 / KM", "Bangalore & Mysore"],
+    rate: "₹35 / KM",
+    coverImage: "/images/fleet/tempo/cover-ai-tempo.jpg",
     images: [
-      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.30_1_cdynzw.jpg",
-      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.29_2_d3nhau.jpg",
-      "https://res.cloudinary.com/dynbpb9u0/image/upload/v1781167335/happy%20luxe/traveller/WhatsApp_Image_2026-06-10_at_01.51.30_hhkhc9.jpg"
+      "/images/fleet/tempo/cover-ai-tempo.jpg"
     ],
     features: [
-      "Plush Reclining Maharaja Seats",
+      "Plush Reclining Seats",
       "High-Roof Walk-In Comfort",
       "Chilled Dual AC System",
       "Generous Luggage Space"
