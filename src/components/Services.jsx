@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BusFront, UsersRound, Car, Route, Plane, ArrowRight, ChevronLeft, ChevronRight, Eye, Sparkles } from 'lucide-react';
+import { BusFront, UsersRound, ArrowRight, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { SERVICES_FLEET, BUSINESS_INFO } from '../data/fleetData';
 import VehicleModal from './VehicleModal';
@@ -14,12 +14,6 @@ export default function Services({ onSelectVehicleForBooking }) {
         return <BusFront className="h-5 w-5" />;
       case 'UsersRound':
         return <UsersRound className="h-5 w-5" />;
-      case 'Car':
-        return <Car className="h-5 w-5" />;
-      case 'Route':
-        return <Route className="h-5 w-5" />;
-      case 'Plane':
-        return <Plane className="h-5 w-5" />;
       default:
         return <BusFront className="h-5 w-5" />;
     }
@@ -57,10 +51,10 @@ export default function Services({ onSelectVehicleForBooking }) {
         
         {/* Section Header */}
         <SectionHeader
-          eyebrow="Our Services"
-          title="Luxury Travel,"
-          highlight="Every Way"
-          subtitle="From Urbania luxury coaches to executive Tempo Travellers and airport transfers — the right vehicle for every journey."
+          eyebrow="Our Fleet & Services"
+          title="Luxury Coaches &"
+          highlight="Travellers"
+          subtitle="Premium Force Urbania luxury coaches and Tempo Travellers — tailored for executive delegations and family journeys in Bangalore & Mysore."
         />
 
         {/* 6 Vehicle & Service Cards Grid */}

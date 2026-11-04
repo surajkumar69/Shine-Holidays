@@ -117,60 +117,6 @@ export const SERVICES_FLEET = [
       "Chilled Dual AC System",
       "Generous Luggage Space"
     ]
-  },
-  {
-    id: "suv",
-    icon: "Car",
-    title: "Premium Luxury SUVs",
-    description: "Toyota Innova Crysta, Fortuner and luxury SUVs for refined private travel, corporate executive transit, and prompt city airport hops.",
-    tags: ["Toyota Innova", "Luxury SUVs", "Chauffeur Driven", "VIP Transit"],
-    rate: "Custom Tariff",
-    images: [
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "6 to 7 Passenger Capacity",
-      "Executive Leather Interiors",
-      "Smooth Highway Cruising",
-      "Discreet Verified Chauffeur"
-    ]
-  },
-  {
-    id: "outstation",
-    icon: "Route",
-    title: "Outstation Trips",
-    description: "Comfortable long-distance journeys between Bangalore, Mysore, Coorg, Ooty, Wayanad and scenic holiday circuits with experienced route chauffeurs and transparent ₹35/KM fares.",
-    tags: ["Bangalore to Mysore", "Tourist Circuits", "Transparent ₹35/KM", "Intercity"],
-    rate: "₹35 / KM",
-    images: [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "Intercity & Multi-Day Tours",
-      "Route-Experienced Drivers",
-      "Transparent Distance Billing",
-      "Zero Hidden Vehicle Charges"
-    ]
-  },
-  {
-    id: "airport",
-    icon: "Plane",
-    title: "Airport Transfers",
-    description: "Punctual Kempegowda Bangalore International Airport (BLR Terminal 1 & 2) and Mysore Airport transfers with live flight tracking and terminal meet-and-greet.",
-    tags: ["Bangalore Airport T1 & T2", "Mysore Airport", "Flight Tracking", "Meet & Greet"],
-    rate: "Fixed & KM Options",
-    images: [
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "Kempegowda Airport T1 & T2",
-      "Mysore Domestic Airport",
-      "Flight Delay Monitoring",
-      "Luggage Loading Assistance"
-    ]
   }
 ];
 
@@ -202,9 +148,9 @@ export const SPECIALITIES = [
     text: "Graceful, coordinated guest transportation with spotless interiors and royal welcome standards."
   },
   {
-    icon: "Plane",
-    title: "VIP Airport Meet & Greet",
-    text: "Punctual airport arrivals and departures with professional chauffeur greeting at Bangalore T1/T2 & Mysore."
+    icon: "Sparkles",
+    title: "VIP Executive Transit",
+    text: "Punctual arrivals and departures with professional chauffeur service across Bangalore and Mysore."
   }
 ];
 
@@ -265,9 +211,9 @@ export const POPULAR_PACKAGES = [
     text: "Coordinated luxury coach travel ensuring wedding guests arrive refreshed, relaxed and in style."
   },
   {
-    icon: "Plane",
-    title: "Airport Transfers",
-    text: "Round-the-clock Bangalore Airport (T1 & T2) & Mysore pickups with flight arrival tracking."
+    icon: "Sparkles",
+    title: "Executive Group Delegations",
+    text: "Coordinated Force Urbania transit for business teams, summits and VIP guests."
   },
   {
     icon: "Mountain",

@@ -288,7 +288,7 @@ export default function ContactForm() {
                       name="destination"
                       value={formData.destination}
                       onChange={handleChange}
-                      placeholder="e.g. Mysore, Coorg, Ooty, Airport"
+                      placeholder="e.g. Mysore, Coorg, Ooty, City Tour"
                       className={inputClass}
                     />
                     {errors.destination && <span className="text-[11px] text-red-500 mt-1 block">{errors.destination}</span>}
@@ -338,7 +338,7 @@ export default function ContactForm() {
                       rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Passenger count, timings, round trip details, or airport flight numbers"
+                      placeholder="Passenger count, timings, round trip details or special requests"
                       className={`${inputClass} resize-none`}
                     />
                   </div>

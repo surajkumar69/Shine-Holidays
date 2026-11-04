@@ -73,7 +73,7 @@ export default function About() {
                   Dual Hub Operations
                 </div>
                 <div className="text-xs text-neutral-400 font-light">
-                  Swift dispatch for airport transfers, city tours & outstation travel
+                  Swift dispatch for executive group tours, delegations & city travel
                 </div>
               </div>
 
