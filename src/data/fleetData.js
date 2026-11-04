@@ -70,6 +70,11 @@ export const SERVICES_FLEET = [
       "/images/fleet/urbania-12/interior-leather-seats.jpg",
       "/images/fleet/urbania-12/interior-night-starlight.jpg"
     ],
+    imageMeta: [
+      { label: "Side View", type: "exterior" },
+      { label: "Leather Seats", type: "interior" },
+      { label: "Night Cabin", type: "interior" }
+    ],
     features: [
       "12 Passengers + 1 Chauffeur",
       "Diamond Leather Recliners",
@@ -91,6 +96,11 @@ export const SERVICES_FLEET = [
       "/images/fleet/urbania/main-side-view.jpg",
       "/images/fleet/urbania-16/interior-executive-aisle.jpg",
       "/images/fleet/urbania-16/interior-smart-cockpit.jpg"
+    ],
+    imageMeta: [
+      { label: "Side View", type: "exterior" },
+      { label: "Central Aisle", type: "interior" },
+      { label: "Smart Cockpit", type: "interior" }
     ],
     features: [
       "16 Passengers + 1 Chauffeur",
