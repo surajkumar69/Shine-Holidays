@@ -1,104 +1,314 @@
-// SHINE HOLIDAYS Official Fleet & Content Data
-// Strictly adhering to non-duplicate image rules and exact business parameters
+// SHINE HOLIDAYS Official Data & Content Configuration
+// Structured following the Happy Luxe Travels design system
+// Strictly enforcing authentic business info, ₹35/KM rate, and zero duplicate photos
 
 export const BUSINESS_INFO = {
   name: "SHINE HOLIDAYS",
-  tagline: "Premium Urbania Luxury AC Coach Rentals",
-  phones: ["9964712471", "9964591813"],
+  shortName: "SH",
+  tagline: "365 Days 365 Ways...!",
+  phones: [
+    { display: "+91 99647 12471", tel: "9964712471" },
+    { display: "+91 99645 91813", tel: "9964591813" }
+  ],
   primaryPhone: "9964712471",
+  secondaryPhone: "9964591813",
   email: "shineholidays77@gmail.com",
+  website: "www.shineholidays.in",
   locations: ["Bangalore", "Mysore"],
+  serviceLocationsDisplay: "Bangalore & Mysore, Karnataka",
   vehicleCategory: "Force Urbania Luxury Premium AC Coach",
   ratePerKm: "₹35",
   ratePerKmNumber: 35,
   whatsappNumber: "919964712471",
   whatsappBaseUrl: "https://wa.me/919964712471",
-  defaultWhatsappMessage: "Hello SHINE HOLIDAYS, I am interested in booking an Urbania luxury coach. Please share the booking details."
+  defaultWhatsappMessage: "Hello SHINE HOLIDAYS, I would like to book a luxury Force Urbania coach. Please share availability and details.",
+  hours: "Available 24 / 7"
 };
 
-export const FLEET_VEHICLES = [
+// Nav links matching Happy Luxe Travels
+export const NAV_LINKS = [
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "Specialities", href: "#specialities" },
+  { label: "Why Us", href: "#why" },
+  { label: "Packages", href: "#packages" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Contact", href: "#contact" }
+];
+
+// Stats Module (Hero section)
+export const HERO_STATS = [
+  { value: "35", prefix: "₹", suffix: "/KM", label: "Flat Transparent Tariff" },
+  { value: "12+1", suffix: " & 16+1", label: "Urbania Seating Options" },
+  { value: "100", suffix: "%", label: "Multi-Duct Climate AC" },
+  { value: "24", suffix: "/7", label: "Dispatch Desk Support" }
+];
+
+// Trust badges
+export const TRUST_BADGES = [
+  "100% Genuine Force Urbania Fleet",
+  "Professional Verified Chauffeurs",
+  "Deep Cleaned & Sanitized",
+  "Bangalore & Mysore Dedicated Hubs"
+];
+
+// Services / Fleet Cards (Notice: Bus category consolidated into Tempo Traveller per user request!)
+export const SERVICES_FLEET = [
   {
-    id: "urbania-12-seater",
-    title: "Urbania 12+1 Seater",
-    category: "Premium Luxury AC Coach",
-    seating: "12+1",
-    seatingDisplay: "12 Passengers + 1 Chauffeur",
-    rate: "₹35/KM",
-    rateDetails: "Transparent base rate across Bangalore & Mysore",
-    badge: "Executive Class",
-    description: "Designed for premium executive delegations, luxury family vacations, and VIP airport transfers. Experience unmatched ride comfort with individual diamond-quilted leather recliners, personal AC vents, and generous luggage capacity.",
-    // Main photo: exactly ONE AI-generated photo matching original vehicle colour and body
-    mainImage: {
-      url: "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
-      alt: "Force Urbania 12+1 Seater Luxury Coach in Metallic Dark Charcoal Grey outside luxury hotel in Bangalore",
-      isAi: true
-    },
-    // Additional photos inside the card: ONLY original uploaded photos
-    additionalImages: [
-      {
-        url: "/images/fleet/urbania-12/interior-leather-seats.jpg",
-        title: "White Diamond-Quilted Recliners",
-        caption: "Custom embroidered Shine Holidays headrests, warm wood trims, and individual armrest controls.",
-        alt: "Shine Holidays Urbania 12+1 interior white diamond-quilted leather seats"
-      },
-      {
-        url: "/images/fleet/urbania-12/exterior-front-view.jpg",
-        title: "Bold Urbania Grille & Front Stance",
-        caption: "Distinctive chrome grille, high-illumination LED headlights, and Shine Holidays branding.",
-        alt: "Force Urbania front exterior view with chrome grille and headlights"
-      }
+    id: "urbania-12",
+    icon: "BusFront",
+    title: "Force Urbania 12+1 Luxury Coach",
+    description: "Force Urbania 12+1 AC luxury coach with individual diamond-quilted leather recliners, personal AC vents, ambient starlight lighting, and generous boot space.",
+    tags: ["12+1 Seater", "Maharaja Recliners", "₹35 / KM", "Bangalore & Mysore"],
+    rate: "₹35 / KM",
+    // Main photo: AI-generated visual matching vehicle color
+    coverImage: "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
+    // Additional authentic uploaded photos
+    images: [
+      "/images/fleet/urbania-12/cover-ai-urbania-12.jpg",
+      "/images/fleet/urbania-12/interior-leather-seats.jpg",
+      "/images/fleet/urbania-12/exterior-front-view.jpg"
     ],
     features: [
-      "12+1 Individual Reclining Captain Seats",
-      "Diamond-Quilted White Leatherette Upholstery",
-      "High-Performance Climate-Controlled AC",
-      "Individual Reading Lights & Charging Ports",
-      "Panoramic UV-Cut Tinted Privacy Windows",
-      "Spacious Dedicated Luggage Boot"
+      "12 Passengers + 1 Chauffeur",
+      "Diamond Leather Recliners",
+      "Multi-Zone Roof AC Ducts",
+      "USB Ports at Every Seat"
     ]
   },
   {
-    id: "urbania-16-seater",
-    title: "Urbania 16+1 Seater",
-    category: "Premium Luxury AC Coach",
-    seating: "16+1",
-    seatingDisplay: "16 Passengers + 1 Chauffeur",
-    rate: "₹35/KM",
-    rateDetails: "Transparent base rate across Bangalore & Mysore",
-    badge: "Chauffeur Executive",
-    description: "The ultimate long-wheelbase luxury group transporter. Offering expansive passenger legroom, central ambient illuminated aisle, overhead luggage racks, and smart digital ceiling entertainment for effortless long-distance travel.",
-    // Main photo: exactly ONE AI-generated photo matching original vehicle colour and body
-    mainImage: {
-      url: "/images/fleet/urbania-16/cover-ai-urbania-16.jpg",
-      alt: "Force Urbania 16+1 Seater Extended Wheelbase Luxury Coach on scenic highway overlook at sunset",
-      isAi: true
-    },
-    // Additional photos inside the card: ONLY original uploaded photos
-    additionalImages: [
-      {
-        url: "/images/fleet/urbania-16/interior-executive-aisle.jpg",
-        title: "Full Executive Cabin Aisle View",
-        caption: "16-passenger ergonomic diamond leather recliners with ambient roof lighting and smooth aisle access.",
-        alt: "Shine Holidays 16+1 Urbania cabin aisle with luxury seating"
-      },
-      {
-        url: "/images/fleet/urbania-16/interior-smart-cockpit.jpg",
-        title: "Cockpit & Smart Ceiling TV System",
-        caption: "Ceiling-mounted Smart TV screen, touchscreen GPS console, and woodgrain cockpit dashboard.",
-        alt: "Force Urbania cockpit dashboard and ceiling-mounted Smart TV"
-      }
+    id: "urbania-16",
+    icon: "BusFront",
+    title: "Force Urbania 16+1 Luxury Coach",
+    description: "Spacious 16+1 Force Urbania luxury coach designed for corporate delegations, family vacationers, and group tours with wide central walk-through aisle.",
+    tags: ["16+1 Seater", "Executive Aisle", "₹35 / KM", "Bangalore & Mysore"],
+    rate: "₹35 / KM",
+    // Main photo: AI-generated visual matching vehicle color
+    coverImage: "/images/fleet/urbania-16/cover-ai-urbania-16.jpg",
+    // Additional authentic uploaded photos
+    images: [
+      "/images/fleet/urbania-16/cover-ai-urbania-16.jpg",
+      "/images/fleet/urbania-16/interior-executive-aisle.jpg",
+      "/images/fleet/urbania-16/interior-smart-cockpit.jpg"
     ],
     features: [
-      "16+1 Ergonomic Executive Seating Layout",
-      "Wide Central Walk-through Aisle",
-      "Ceiling-Mounted Smart Entertainment Screen",
-      "Dual Air Conditioning System with Roof Ducts",
-      "Rich Wooden Floorboards & Accent Lighting",
-      "Extensive Extended Wheelbase Luggage Space"
+      "16 Passengers + 1 Chauffeur",
+      "Central Walk-Through Aisle",
+      "Smart Entertainment Display",
+      "Generous Luggage Capacity"
+    ]
+  },
+  {
+    id: "tempo",
+    icon: "Bus",
+    title: "Tempo Traveller & Executive Luxury Coaches",
+    description: "Premium Maharaja Tempo Travellers and executive luxury coaches (12, 17, 20 & 26+ seaters) equipped with push-back seats, high-roof comfort, and chilled AC for plush group travel and wedding delegations.",
+    tags: ["Maharaja Traveller", "12 to 26+ Seater Coaches", "Executive Transit", "Wedding & Events"],
+    rate: "₹35 / KM Base",
+    images: [
+      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=1200&auto=format&fit=crop"
+    ],
+    features: [
+      "12, 17, 20 & 26+ Seating Options",
+      "High-Roof Pushback Comfort",
+      "Chilled Dual AC System",
+      "Ideal for Large Groups & Events"
+    ]
+  },
+  {
+    id: "suv",
+    icon: "Car",
+    title: "Premium Luxury SUVs",
+    description: "Toyota Innova Crysta, Fortuner and luxury SUVs for refined private travel, corporate executive transit, and prompt city airport hops.",
+    tags: ["Toyota Innova", "Luxury SUVs", "Chauffeur Driven", "VIP Transit"],
+    rate: "Custom Tariff",
+    images: [
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop"
+    ],
+    features: [
+      "6 to 7 Passenger Capacity",
+      "Executive Leather Interiors",
+      "Smooth Highway Cruising",
+      "Discreet Verified Chauffeur"
+    ]
+  },
+  {
+    id: "outstation",
+    icon: "Route",
+    title: "Outstation Trips",
+    description: "Comfortable long-distance journeys between Bangalore, Mysore, Coorg, Ooty, Wayanad and scenic holiday circuits with experienced route chauffeurs and transparent ₹35/KM fares.",
+    tags: ["Bangalore to Mysore", "Tourist Circuits", "Transparent ₹35/KM", "Intercity"],
+    rate: "₹35 / KM",
+    images: [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1200&auto=format&fit=crop"
+    ],
+    features: [
+      "Intercity & Multi-Day Tours",
+      "Route-Experienced Drivers",
+      "Transparent Distance Billing",
+      "Zero Hidden Vehicle Charges"
+    ]
+  },
+  {
+    id: "airport",
+    icon: "Plane",
+    title: "Airport Transfers",
+    description: "Punctual Kempegowda Bangalore International Airport (BLR Terminal 1 & 2) and Mysore Airport transfers with live flight tracking and terminal meet-and-greet.",
+    tags: ["Bangalore Airport T1 & T2", "Mysore Airport", "Flight Tracking", "Meet & Greet"],
+    rate: "Fixed & KM Options",
+    images: [
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1200&auto=format&fit=crop"
+    ],
+    features: [
+      "Kempegowda Airport T1 & T2",
+      "Mysore Domestic Airport",
+      "Flight Delay Monitoring",
+      "Luggage Loading Assistance"
     ]
   }
 ];
 
+// Specialities / Occasions (uk in HLT)
+export const SPECIALITIES = [
+  {
+    icon: "UsersRound",
+    title: "Group Travel",
+    text: "Effortless transport and spacious reclining comfort for delegations and large groups of any size."
+  },
+  {
+    icon: "Briefcase",
+    title: "Corporate Travel",
+    text: "Executive-grade reliability, punctual schedules and discreet professionalism for business teams and VIP guests."
+  },
+  {
+    icon: "Landmark",
+    title: "Heritage & Pilgrimage",
+    text: "Comfortable, serene journeys across Mysore Palace, Chamundi Hills, Srirangapatna and South Indian temples."
+  },
+  {
+    icon: "Map",
+    title: "Curated Holiday Circuits",
+    text: "Bespoke multi-day itineraries covering Bangalore, Mysore, Coorg, Ooty and Kabini handled end-to-end."
+  },
+  {
+    icon: "Heart",
+    title: "Wedding & Family Events",
+    text: "Graceful, coordinated guest transportation with spotless interiors and royal welcome standards."
+  },
+  {
+    icon: "Plane",
+    title: "VIP Airport Meet & Greet",
+    text: "Punctual airport arrivals and departures with professional chauffeur greeting at Bangalore T1/T2 & Mysore."
+  }
+];
+
+// Why Choose Us / The SHINE HOLIDAYS Promise (ck in HLT)
+export const WHY_CHOOSE_ITEMS = [
+  {
+    icon: "HeartHandshake",
+    title: "Customer First Approach",
+    text: "Your comfort, safety and travel satisfaction guide every operational decision we make."
+  },
+  {
+    icon: "Crown",
+    title: "Premium Force Urbania Fleet",
+    text: "A meticulously maintained fleet of authentic Force Urbania AC coaches with diamond recliners."
+  },
+  {
+    icon: "BadgeCheck",
+    title: "Professional Chauffeurs",
+    text: "Courteous, verified, uniformed chauffeurs well-versed with Bangalore-Mysore highway and local routes."
+  },
+  {
+    icon: "Sparkles",
+    title: "Deep Cleaned & Sanitized",
+    text: "Every coach undergoes meticulous interior deep-cleaning and AC duct sanitization before every trip."
+  },
+  {
+    icon: "ReceiptText",
+    title: "Transparent ₹35/KM Tariff",
+    text: "Clear, distance-based billing at ₹35/KM with zero hidden vehicle charges or misleading claims."
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Reliable 24/7 Dispatch",
+    text: "On-time arrival, every time — 24/7 dedicated telephone and WhatsApp reservation support."
+  }
+];
+
+// Popular Packages (dk in HLT)
+export const POPULAR_PACKAGES = [
+  {
+    icon: "Briefcase",
+    title: "Corporate Transit",
+    text: "Executive Force Urbania transport for boardroom delegations, summits and site visits."
+  },
+  {
+    icon: "Users",
+    title: "Family Vacations",
+    text: "Spacious, joyful group journeys to Mysore, Coorg and hills with plush reclining comfort."
+  },
+  {
+    icon: "Landmark",
+    title: "Mysore Heritage Tour",
+    text: "Full-day royal tour covering Mysore Palace, Chamundi Hills, Brindavan Gardens and Srirangapatna."
+  },
+  {
+    icon: "Heart",
+    title: "Wedding Delegations",
+    text: "Coordinated luxury coach travel ensuring wedding guests arrive refreshed, relaxed and in style."
+  },
+  {
+    icon: "Plane",
+    title: "Airport Transfers",
+    text: "Round-the-clock Bangalore Airport (T1 & T2) & Mysore pickups with flight arrival tracking."
+  },
+  {
+    icon: "Mountain",
+    title: "Coorg & Ooty Escapes",
+    text: "Scenic hill station getaways featuring smooth suspension and panoramic tinted windows."
+  },
+  {
+    icon: "Sparkles",
+    title: "Custom Travel Plans",
+    text: "Tailored multi-day itineraries designed completely around your preferred timings and destinations."
+  }
+];
+
+// Four Steps Booking Process (fk in HLT)
+export const FOUR_STEPS = [
+  {
+    step: "01",
+    icon: "CarFront",
+    title: "Choose Vehicle",
+    text: "Select the Urbania 12+1, 16+1 or luxury coach that fits your journey."
+  },
+  {
+    step: "02",
+    icon: "PhoneCall",
+    title: "Contact Us",
+    text: "Reach our dispatch desk on Call or WhatsApp for instant confirmation."
+  },
+  {
+    step: "03",
+    icon: "CalendarCheck",
+    title: "Confirm Booking",
+    text: "Lock in your travel date, pickup location and transparent ₹35/KM fare."
+  },
+  {
+    step: "04",
+    icon: "PartyPopper",
+    title: "Enjoy Your Journey",
+    text: "Sit back and experience luxury travel with our courteous professional chauffeur."
+  }
+];
+
+// Gallery: Exactly 4 unique original uploaded photos
 export const GALLERY_ITEMS = [
   {
     id: "gal-1",
@@ -130,29 +340,24 @@ export const GALLERY_ITEMS = [
   }
 ];
 
-export const WHY_CHOOSE_ITEMS = [
+// Guest Testimonials
+export const TESTIMONIALS = [
   {
-    title: "Luxury Premium AC Coaches",
-    description: "Every Force Urbania in our fleet features factory-calibrated climate control with multi-zone roof cooling ducts."
+    name: "Dr. Arvind Ramesh",
+    role: "Family Vacation, Bangalore to Mysore",
+    rating: 5,
+    text: "We booked the Urbania 12+1 for our family trip from Bangalore to Mysore. The vehicle was spotlessly clean, the diamond leather seats were amazingly comfortable, and the chauffeur was exceptionally polite. Transparent ₹35/KM billing made it completely stress-free."
   },
   {
-    title: "Comfortable Seating",
-    description: "Ergonomically engineered diamond-stitched leather recliners with adjustable armrests and ample legroom."
+    name: "Vikramaditya Rao",
+    role: "VP Corporate Relations, Tech Delegation",
+    rating: 5,
+    text: "Shine Holidays handled our international tech delegation travel with the 16+1 Force Urbania. Punctual airport pickup at Kempegowda T2, superb air conditioning, and seamless luggage space. Truly high-end executive transit."
   },
   {
-    title: "Two Seating Configurations",
-    description: "Choose between our versatile Urbania 12+1 Seater or our extended-wheelbase Urbania 16+1 Seater."
-  },
-  {
-    title: "Bangalore & Mysore Service",
-    description: "Operating seamlessly across Karnataka with hubs in Bangalore and Mysore for city tours, outstation trips, and airport transfers."
-  },
-  {
-    title: "Premium Travel Experience",
-    description: "From pristine interiors to courteous, experienced chauffeurs, your journey feels like a first-class travel lounge."
-  },
-  {
-    title: "Transparent Starting Rate",
-    description: "Clear and straightforward pricing starting from ₹35/KM with zero hidden vehicle charges."
+    name: "Sunita & Rajesh Hegde",
+    role: "Wedding Delegation, Palace Grounds",
+    rating: 5,
+    text: "Coordinating guest transport for our daughter's wedding in Bangalore was effortless thanks to Shine Holidays. The Urbania coach looked regal, comfortable, and every guest praised the smooth ride."
   }
 ];

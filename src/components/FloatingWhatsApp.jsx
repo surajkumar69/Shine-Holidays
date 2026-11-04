@@ -1,49 +1,35 @@
 import React from 'react';
-import { MessageSquare, Phone } from 'lucide-react';
+import { MessageSquare, CalendarCheck } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/fleetData';
 
 export default function FloatingWhatsApp() {
   const whatsappUrl = `${BUSINESS_INFO.whatsappBaseUrl}?text=${encodeURIComponent(BUSINESS_INFO.defaultWhatsappMessage)}`;
 
   return (
-    <>
-      {/* Floating WhatsApp Action Pill for Desktop & Tablet */}
-      <div className="fixed bottom-6 right-6 z-40 hidden sm:block">
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 px-5 py-3.5 rounded-full bg-[#25D366] text-white font-semibold text-xs uppercase tracking-wider shadow-2xl hover:brightness-110 hover:scale-105 transition-all group"
-          title="Chat with SHINE HOLIDAYS on WhatsApp"
-        >
-          <div className="relative">
-            <MessageSquare className="w-5 h-5 fill-white" />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
-          </div>
-          <span className="font-medium">Book on WhatsApp</span>
-        </a>
-      </div>
+    <div className="fixed bottom-5 right-4 z-40 flex flex-col items-end gap-2.5 sm:bottom-6 sm:right-6">
+      
+      {/* Quick Booking Anchor Pill (Visible on sm+) */}
+      <a
+        href="#contact"
+        className="hidden items-center gap-2 rounded-full bg-[#0F172A] px-5 py-2.5 text-xs font-semibold text-white shadow-lift transition-all hover:shadow-soft sm:flex border border-white/20"
+      >
+        <CalendarCheck className="h-4 w-4 text-[#E6C35C]" />
+        <span>Book Now</span>
+      </a>
 
-      {/* Mobile Sticky Bottom CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-[#0A0B0E]/95 backdrop-blur-lg border-t border-white/10 px-4 py-2.5 flex items-center gap-3">
-        <a
-          href={`tel:${BUSINESS_INFO.primaryPhone}`}
-          className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/10 text-white font-medium text-xs tracking-wider border border-white/15 active:scale-98 transition-all"
-        >
-          <Phone className="w-4 h-4 text-[#D4AF37]" />
-          <span>Call Desk</span>
-        </a>
+      {/* Floating WhatsApp Action Button */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp with SHINE HOLIDAYS"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] hover:scale-105 active:scale-95 transition-all"
+      >
+        {/* Soft pulsing halo */}
+        <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
+        <MessageSquare className="h-7 w-7 fill-white/20 relative z-10" />
+      </a>
 
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-[1.5] flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B89628] text-black font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-all font-medium"
-        >
-          <MessageSquare className="w-4 h-4 fill-black/20" />
-          <span>Book on WhatsApp</span>
-        </a>
-      </div>
-    </>
+    </div>
   );
 }

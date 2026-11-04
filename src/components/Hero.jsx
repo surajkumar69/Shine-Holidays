@@ -1,150 +1,115 @@
 import React from 'react';
-import { ArrowDown, MessageSquare, Shield, CheckCircle2, ChevronRight, Sparkles } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/fleetData';
+import { ArrowRight, MessageSquare, Check, Sparkles, Shield, Compass } from 'lucide-react';
+import { BUSINESS_INFO, HERO_STATS, TRUST_BADGES } from '../data/fleetData';
 
 export default function Hero() {
   const whatsappUrl = `${BUSINESS_INFO.whatsappBaseUrl}?text=${encodeURIComponent(BUSINESS_INFO.defaultWhatsappMessage)}`;
 
-  const scrollToContact = (e) => {
-    e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 sm:pt-32 pb-16 overflow-hidden">
+    <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden">
       
-      {/* Background Image: Original Uploaded Urbania Photograph */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image: Original Uploaded Urbania Photograph with Smooth Scale */}
+      <div className="absolute inset-0">
         <img
           src="/images/hero/hero-urbania-resort.jpg"
-          alt="SHINE HOLIDAYS Force Urbania Luxury AC Coach parked at resort in Bangalore"
-          className="w-full h-full object-cover object-center scale-105"
+          alt="SHINE HOLIDAYS Luxury Force Urbania Coach parked at Bangalore Resort"
+          className="h-full w-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
         />
-        {/* Layered Cinematic Dark Vignettes & Atmospheric Lighting */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07080A] via-[#07080A]/85 to-black/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/50 to-black/60"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(212,175,55,0.09),transparent_60%)]"></div>
+        {/* Layered Luxury Automotive Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#070D1B]/92 via-[#0B1326]/75 to-[#16213E]/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F7F6F2] via-transparent to-transparent" />
       </div>
 
-      {/* Atmospheric Soft Golden Auras */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[160px] pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none"></div>
+      {/* Floating Ambient Gold Atmosphere Orbs */}
+      <span className="pointer-events-none absolute left-[8%] top-[20%] h-44 w-44 rounded-full bg-[#D4AF37]/20 blur-3xl animate-gold-drift" />
+      <span className="pointer-events-none absolute right-[12%] top-[30%] h-56 w-56 rounded-full bg-[#E6C35C]/15 blur-3xl animate-float-slow" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* Main Hero Container */}
+      <div className="container-x relative z-10 pt-32 sm:pt-36 pb-20">
         <div className="max-w-3xl">
           
-          {/* Monogram / Category Pill */}
-          <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-[#12141A]/90 border border-[#D4AF37]/40 text-[#E5C378] text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium shadow-lg backdrop-blur-md mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse flex-shrink-0"></span>
-            <span>Chauffeur-Driven Luxury Mobility • Bangalore & Mysore</span>
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 rounded-full glass-dark px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#E6C35C] shadow-lg mb-6">
+            <Sparkles className="h-3.5 w-3.5 text-[#D4AF37]" />
+            <span>Force Urbania AC Coaches • Bangalore & Mysore</span>
           </div>
 
-          {/* Main Heading in Classic Editorial Automotive Style */}
-          <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6">
-            Experience Luxury. <br />
-            <span className="gold-gradient-text font-serif-luxury italic font-normal">on Every Journey.</span>
+          {/* Main Headline in Happy Luxe Travels Display Font */}
+          <h1 className="text-balance font-display text-5xl font-semibold leading-[1.02] text-white sm:text-7xl lg:text-[5.5rem]">
+            SHINE <span className="text-gold-gradient italic font-normal">HOLIDAYS</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl font-light text-neutral-200 tracking-wide mb-4">
+          <p className="mt-5 font-display text-xl sm:text-2xl lg:text-3xl italic tracking-wide text-[#E6C35C]">
             Premium Urbania Luxury AC Coach Rentals in Bangalore & Mysore.
           </p>
 
-          {/* Supporting Text */}
-          <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed mb-8 max-w-2xl">
-            Travel comfortably with <strong className="text-white font-medium">SHINE HOLIDAYS</strong>. Experience premium transportation with spacious seating and luxurious AC coaches.
+          {/* Description */}
+          <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-white/85 font-light">
+            Travel comfortably with <strong className="text-white font-semibold">SHINE HOLIDAYS</strong>. Experience premium transportation with spacious seating and luxurious AC coaches at <strong className="text-[#E6C35C] font-semibold">₹35 per KM</strong>.
           </p>
 
-          {/* Highlight Badge: ₹35/KM in Classic Framed Module */}
-          <div className="inline-flex items-center gap-4 sm:gap-5 p-3.5 sm:p-4 rounded-2xl bg-black/60 border border-[#D4AF37]/40 backdrop-blur-md mb-8 shadow-2xl">
-            <div className="px-3.5 py-2 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4AF37]">Starting Rate</span>
-            </div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#D4AF37] tracking-tight">₹35</span>
-              <span className="text-xs sm:text-sm uppercase tracking-widest text-neutral-300 font-medium">/ KM</span>
-            </div>
-            <div className="hidden sm:block h-8 w-[1px] bg-white/15 mx-1"></div>
-            <span className="hidden sm:inline text-xs text-neutral-300 max-w-[210px] leading-snug">
-              Force Urbania 12+1 & 16+1 Seater Configurations
-            </span>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+          {/* Three Classic Action Buttons */}
+          <div className="mt-9 flex flex-wrap gap-3.5 sm:gap-4">
             <a
-              href="#fleet"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#E5C378] to-[#B89329] text-black font-semibold text-xs uppercase tracking-[0.16em] shadow-[0_4px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_28px_rgba(212,175,55,0.5)] hover:brightness-105 active:scale-[0.99] transition-all"
+              href="#contact"
+              className="btn-shimmer shadow-gold flex items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3.5 text-sm font-bold text-[#16213E] transition-all hover:shadow-lg group"
             >
-              <span>Explore Our Fleet</span>
-              <ChevronRight className="w-4 h-4" />
+              <span>Book Your Ride</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+
+            <a
+              href="#services"
+              className="glass flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all border border-white/30"
+            >
+              <Compass className="h-4 w-4 text-[#E6C35C]" />
+              <span>Explore Fleet</span>
             </a>
 
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl glass-panel border border-[#D4AF37]/40 text-[#E5C378] hover:text-white hover:bg-white/10 font-semibold text-xs uppercase tracking-[0.14em] transition-all group"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-105"
             >
-              <MessageSquare className="w-4 h-4 text-[#25D366] fill-[#25D366]/20" />
-              <span>Book via WhatsApp</span>
-            </a>
-
-            <a
-              href="#contact"
-              onClick={scrollToContact}
-              className="inline-flex items-center justify-center px-6 py-4 rounded-xl border border-white/15 hover:border-white/30 text-neutral-300 hover:text-white text-xs uppercase tracking-[0.14em] font-medium transition-all"
-            >
-              <span>Quick Reserve</span>
+              <MessageSquare className="h-4 w-4" />
+              <span>WhatsApp Now</span>
             </a>
           </div>
 
-          {/* Micro Pillars Strip with Classic Dividers */}
-          <div className="pt-8 mt-10 grid grid-cols-3 gap-3 sm:gap-4 border-t border-white/10 text-left">
-            <div>
-              <div className="text-[10px] uppercase text-neutral-400 tracking-wider">Fleet Standard</div>
-              <div className="font-cinzel text-xs sm:text-sm font-semibold text-white mt-0.5">100% Genuine</div>
-              <div className="text-[10px] text-[#D4AF37]">Force Urbania AC</div>
-            </div>
+          {/* Trust Badges Strip with Golden Checkmarks */}
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+            {TRUST_BADGES.map((badge, idx) => (
+              <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm font-medium text-white/90">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold-sheen text-[#16213E] flex-shrink-0">
+                  <Check className="h-3 w-3 stroke-[3]" />
+                </span>
+                <span>{badge}</span>
+              </li>
+            ))}
+          </ul>
 
-            <div className="border-l border-white/10 pl-3 sm:pl-4">
-              <div className="text-[10px] uppercase text-neutral-400 tracking-wider">Seating Layouts</div>
-              <div className="font-cinzel text-xs sm:text-sm font-semibold text-white mt-0.5">12+1 & 16+1</div>
-              <div className="text-[10px] text-[#D4AF37]">Diamond Recliners</div>
-            </div>
-
-            <div className="border-l border-white/10 pl-3 sm:pl-4">
-              <div className="text-[10px] uppercase text-neutral-400 tracking-wider">Service Hubs</div>
-              <div className="font-cinzel text-xs sm:text-sm font-semibold text-white mt-0.5">BLR & MYS</div>
-              <div className="text-[10px] text-[#D4AF37]">₹35 / KM Flat Rate</div>
-            </div>
-          </div>
         </div>
 
-        {/* Inset Vehicle Identification Plaque (Floating on desktop right) */}
-        <div className="hidden lg:block absolute bottom-12 right-6 xl:right-10 max-w-sm p-4 sm:p-5 rounded-2xl bg-[#090A0E]/85 backdrop-blur-xl border border-[#D4AF37]/45 shadow-[0_16px_40px_rgba(0,0,0,0.85)]">
-          <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] flex-shrink-0">
-              <Shield className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold block">
-                Flagship Vehicle
-              </span>
-              <div className="font-cinzel text-sm sm:text-base font-bold text-white tracking-wide">
-                Force Urbania Luxury Coach
+        {/* 4-Column Metric Stats Grid (Happy Luxe Travels Style) */}
+        <div className="mt-14 grid max-w-3xl grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-3xl bg-white/20 p-px shadow-soft backdrop-blur-md">
+          {HERO_STATS.map((stat, idx) => (
+            <div key={idx} className="bg-[#16213E]/85 p-5 sm:p-6 text-center backdrop-blur-md">
+              <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+                {stat.prefix && <span className="text-[#E6C35C]">{stat.prefix}</span>}
+                {stat.value}
+                {stat.suffix && <span className="text-[#E6C35C] text-lg sm:text-xl font-normal">{stat.suffix}</span>}
               </div>
-              <div className="text-[11px] text-neutral-300 font-light mt-0.5">
-                Chauffeur Driven • Bangalore & Mysore • ₹35/KM
+              <div className="mt-1 text-[10px] sm:text-xs uppercase tracking-wider text-white/70 font-medium">
+                {stat.label}
               </div>
             </div>
-          </div>
+          ))}
         </div>
 
       </div>
+
     </section>
   );
 }

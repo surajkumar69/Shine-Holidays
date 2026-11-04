@@ -2,128 +2,191 @@
 
 @layer base {
   :root {
-    --gold-primary: #D4AF37;
-    --gold-light: #F5E6B3;
-    --gold-dark: #997B22;
-    --bg-dark: #07080A;
-    --bg-card: #0F1115;
-    --border-hairline: rgba(255, 255, 255, 0.08);
-    --border-gold: rgba(212, 175, 55, 0.3);
+    --navy: #16213e;
+    --navy-deep: #0f172a;
+    --navy-950: #070d1b;
+    --navy-900: #0b1326;
+    --navy-50: #f0f3f9;
+    --gold: #d4af37;
+    --gold-soft: #e6c35c;
+    --gold-deep: #b5922a;
+    --canvas: #f7f6f2;
+    --cream: #faf9f5;
+    --glass: rgba(255, 255, 255, 0.72);
+    --glass-strong: rgba(255, 255, 255, 0.92);
+    --glass-dark: rgba(11, 19, 38, 0.55);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--canvas);
+    color: var(--navy);
   }
 
   body {
-    background-color: #07080A;
-    color: #E2E8F0;
+    background-color: var(--canvas);
+    color: var(--navy);
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
   }
 }
 
-.font-cinzel {
-  font-family: 'Cinzel', serif;
+/* Typography */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-.font-serif-luxury {
-  font-family: 'Playfair Display', serif;
+.font-body {
+  font-family: 'Sora', system-ui, sans-serif;
 }
 
-/* Luxury gradients */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FFF8DC 0%, #E5C378 25%, #D4AF37 50%, #B89329 100%);
+/* Glassmorphism Styles (Happy Luxe Travels aesthetic) */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(230, 195, 92, 0.25);
+}
+
+/* Luxury Shadows */
+.shadow-glass {
+  box-shadow: 0 8px 32px rgba(22, 33, 62, 0.12);
+}
+
+.shadow-soft {
+  box-shadow: 0 12px 40px -14px rgba(22, 33, 62, 0.22);
+}
+
+.shadow-lift {
+  box-shadow: 0 32px 80px -28px rgba(7, 13, 27, 0.45);
+}
+
+.shadow-gold {
+  box-shadow: 0 10px 34px -10px rgba(212, 175, 55, 0.5);
+}
+
+/* Gold Gradients & Text */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #b5922a, #d4af37 42%, #e6c35c);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-.gold-gradient-button {
-  background: linear-gradient(135deg, #D4AF37 0%, #E5C378 40%, #B89329 100%);
+.bg-gold-sheen {
+  background-image: linear-gradient(135deg, #e6c35c, #d4af37 48%, #b5922a);
 }
 
-.gold-gradient-button:hover {
-  background: linear-gradient(135deg, #DFBF4F 0%, #F5E6B3 40%, #C49E2D 100%);
+.gold-rule {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.85), transparent);
 }
 
-.luxury-card-border {
-  border: 1px solid rgba(212, 175, 55, 0.22);
+.btn-shimmer {
+  background-size: 200% 100%;
+  background-image: linear-gradient(110deg, #d4af37, #e6c35c, #d4af37 50%, #b5922a);
+  transition: all 0.3s ease;
 }
 
-.luxury-card-border:hover {
-  border: 1px solid rgba(212, 175, 55, 0.55);
+.btn-shimmer:hover {
+  background-position: 100% 0;
+  filter: brightness(1.05);
 }
 
-/* Glass panel */
-.glass-panel {
-  background: rgba(15, 17, 21, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Layout Utilities */
+.container-x {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-.glass-panel-gold {
-  background: rgba(15, 17, 21, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.28);
+@media (min-width: 640px) {
+  .container-x {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
-/* Custom Scrollbar */
+@media (min-width: 1024px) {
+  .container-x {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* Animations */
+@keyframes goldDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, -20px) scale(1.08);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, 25px);
+  }
+}
+
+.animate-gold-drift {
+  animation: goldDrift 14s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+/* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #07080A;
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #272A34;
+  background: #cbd5e1;
   border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
-}
-
-/* Subtle image card shine effect */
-.shine-card {
-  position: relative;
-  overflow: hidden;
-}
-.shine-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 35%,
-    rgba(212, 175, 55, 0.12) 50%,
-    transparent 65%
-  );
-  transform: rotate(35deg) translateY(-100%);
-  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-.shine-card:hover::after {
-  transform: rotate(35deg) translateY(100%);
-}
-
-/* Corner bracket accents for automotive frames */
-.corner-bracket-tl {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 14px;
-  height: 14px;
-  border-top: 2px solid #D4AF37;
-  border-left: 2px solid #D4AF37;
-  pointer-events: none;
-}
-.corner-bracket-br {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 14px;
-  height: 14px;
-  border-bottom: 2px solid #D4AF37;
-  border-right: 2px solid #D4AF37;
-  pointer-events: none;
+  background: var(--gold);
 }
