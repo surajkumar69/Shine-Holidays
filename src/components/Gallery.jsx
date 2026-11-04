@@ -5,7 +5,6 @@ import { GALLERY_ITEMS } from '../data/fleetData';
 export default function Gallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedImageIndex === null) return;
@@ -27,15 +26,16 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-[#0B0C0F] relative border-t border-white/5">
+    <section id="gallery" className="py-24 sm:py-28 bg-[#07080A] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Visual Showcase</span>
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12141A] border border-[#D4AF37]/35 text-[#E5C378] text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-medium mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <span>Visual Fleet Showcase</span>
           </div>
+
           <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
             Curated <span className="gold-gradient-text font-serif-luxury italic font-normal">Fleet Gallery.</span>
           </h2>
@@ -44,40 +44,44 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid: Varied aspect ratios and responsive layouts */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {GALLERY_ITEMS.map((item, index) => (
             <div
               key={item.id}
               onClick={() => setSelectedImageIndex(index)}
-              className="group relative rounded-2xl overflow-hidden bg-[#15161C] border border-white/10 hover:border-[#D4AF37]/50 cursor-pointer shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative rounded-3xl overflow-hidden bg-[#0D0F14] border border-white/10 hover:border-[#D4AF37]/50 cursor-pointer shadow-xl transition-all duration-300 hover:-translate-y-1.5"
             >
-              <div className="h-72 sm:h-80 w-full overflow-hidden bg-black/40">
+              {/* Corner brackets */}
+              <div className="corner-bracket-tl"></div>
+              <div className="corner-bracket-br"></div>
+
+              <div className="h-72 sm:h-80 w-full overflow-hidden bg-black/50">
                 <img
                   src={item.url}
                   alt={item.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
               {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
 
               {/* Hover Zoom Icon */}
-              <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
                 <Maximize2 className="w-4 h-4 text-[#D4AF37]" />
               </div>
 
               {/* Bottom Caption */}
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
+                <span className="text-[9px] uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
                   {item.category}
                 </span>
                 <h3 className="font-cinzel text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-snug">
                   {item.title}
                 </h3>
-                <span className="text-[11px] text-neutral-400 mt-1 inline-flex items-center gap-1">
-                  Click to view high-res
+                <span className="text-[10px] text-neutral-400 mt-1 inline-flex items-center gap-1 font-light">
+                  Click to expand photograph
                 </span>
               </div>
             </div>
@@ -89,7 +93,7 @@ export default function Gallery() {
       {/* Professional Fullscreen Lightbox Modal */}
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
           onClick={() => setSelectedImageIndex(null)}
         >
           {/* Close Button */}
@@ -107,7 +111,7 @@ export default function Gallery() {
               e.stopPropagation();
               handlePrev();
             }}
-            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black border border-white/20 text-white z-50 cursor-pointer transition-all"
+            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/70 hover:bg-[#D4AF37] hover:text-black border border-white/20 text-white z-50 cursor-pointer transition-all"
             aria-label="Previous Image"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -119,7 +123,7 @@ export default function Gallery() {
               e.stopPropagation();
               handleNext();
             }}
-            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-black border border-white/20 text-white z-50 cursor-pointer transition-all"
+            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/70 hover:bg-[#D4AF37] hover:text-black border border-white/20 text-white z-50 cursor-pointer transition-all"
             aria-label="Next Image"
           >
             <ChevronRight className="w-6 h-6" />
@@ -130,7 +134,7 @@ export default function Gallery() {
             className="max-w-5xl max-h-[85vh] flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl bg-black max-h-[75vh]">
+            <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-black max-h-[75vh]">
               <img
                 src={GALLERY_ITEMS[selectedImageIndex].url}
                 alt={GALLERY_ITEMS[selectedImageIndex].alt}
