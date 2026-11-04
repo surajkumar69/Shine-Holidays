@@ -75,11 +75,21 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Actions: Call Icon & Hamburger Button */}
+          {/* Mobile Actions: WhatsApp Icon, Call Icon & Hamburger Button */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
-              href={`tel:${BUSINESS_INFO.primaryPhone}`}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#16213E] text-white shadow-sm"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
+              aria-label="Chat on WhatsApp"
+            >
+              <MessageSquare className="h-4 w-4 fill-white/20" />
+            </a>
+
+            <a
+              href={`tel:+91${BUSINESS_INFO.primaryPhone}`}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#16213E] text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
               aria-label="Call Dispatch"
             >
               <Phone className="h-4 w-4 text-[#E6C35C]" />

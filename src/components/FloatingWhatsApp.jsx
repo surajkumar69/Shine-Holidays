@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, CalendarCheck } from 'lucide-react';
+import { MessageSquare, CalendarCheck, Phone } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/fleetData';
 
 export default function FloatingWhatsApp() {
@@ -15,6 +15,15 @@ export default function FloatingWhatsApp() {
       >
         <CalendarCheck className="h-4 w-4 text-[#E6C35C]" />
         <span>Book Now</span>
+      </a>
+
+      {/* Floating Call Action Button */}
+      <a
+        href={`tel:+91${BUSINESS_INFO.primaryPhone}`}
+        aria-label="Call SHINE HOLIDAYS"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#16213E] text-[#E6C35C] shadow-lg hover:scale-105 active:scale-95 transition-all border border-[#D4AF37]/50"
+      >
+        <Phone className="h-5 w-5" />
       </a>
 
       {/* Floating WhatsApp Action Button */}

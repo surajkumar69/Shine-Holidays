@@ -104,8 +104,8 @@ export const SERVICES_FLEET = [
     icon: "UsersRound",
     title: "Tempo Traveller",
     description: "Premium luxury Tempo Traveller for comfortable group journeys equipped with plush reclining seats, ambient cabin lighting, high-roof walk-in comfort, and individual AC vents.",
-    tags: ["Tempo Traveller", "Plush Group Travel", "₹35 / KM", "Bangalore & Mysore"],
-    rate: "₹35 / KM",
+    tags: ["Tempo Traveller", "Plush Group Travel", "₹25 / KM", "Bangalore & Mysore"],
+    rate: "₹25 / KM",
     coverImage: "/images/fleet/tempo/cover-ai-tempo.jpg",
     images: [
       "/images/fleet/tempo/cover-ai-tempo.jpg"

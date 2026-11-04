@@ -51,7 +51,7 @@ export default function ContactForm() {
       `🏁 *Destination:* ${formData.destination}`,
       `📅 *Travel Date:* ${formData.date}`,
       `🚐 *Vehicle Type:* ${formData.vehicle}`,
-      `💰 *Tariff Reference:* ₹35/KM Flat Rate`,
+      `💰 *Tariff Reference:* ${formData.vehicle.toLowerCase().includes('tempo') ? '₹25/KM Rate' : '₹35/KM Flat Rate'}`,
       formData.message ? `📝 *Message:* ${formData.message}` : null,
       `━━━━━━━━━━━━━━━━━━━━`,
       `Please confirm availability and share estimated itinerary quotation.`

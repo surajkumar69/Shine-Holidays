@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BusFront, UsersRound, ArrowRight, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
+import { BusFront, UsersRound, ArrowRight, ChevronLeft, ChevronRight, Eye, Phone, MessageSquare } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { SERVICES_FLEET, BUSINESS_INFO } from '../data/fleetData';
 import VehicleModal from './VehicleModal';
@@ -152,27 +152,45 @@ export default function Services({ onSelectVehicleForBooking }) {
                     </div>
                   )}
 
-                  {/* Bottom Action CTAs */}
-                  <div className="mt-6 pt-5 border-t border-[#16213E]/10 flex items-center justify-between">
-                    <button
-                      onClick={() => handleBookVehicle(service)}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#16213E] transition-colors hover:text-[#B5922A] cursor-pointer group/btn"
-                    >
-                      <span>Book Now</span>
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold-sheen text-[#16213E] transition-transform duration-300 group-hover/btn:translate-x-1 shadow-sm">
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </button>
+                  {/* Bottom Action CTAs - WhatsApp & Call Integration */}
+                  <div className="mt-6 pt-5 border-t border-[#16213E]/10 flex flex-wrap items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={`${BUSINESS_INFO.whatsappBaseUrl}?text=${encodeURIComponent(
+                          `Hello SHINE HOLIDAYS, I would like to book the ${service.title} (${service.rate || '₹35/KM'}). Please share availability and details.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all shadow-sm active:scale-95 cursor-pointer"
+                        aria-label={`Book ${service.title} on WhatsApp`}
+                      >
+                        <MessageSquare className="h-3.5 w-3.5 fill-white/20" />
+                        <span>WhatsApp</span>
+                      </a>
+
+                      <a
+                        href={`tel:+91${BUSINESS_INFO.primaryPhone}`}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-[#16213E] text-white hover:bg-[#1f2d52] transition-all shadow-sm active:scale-95 cursor-pointer"
+                        aria-label={`Call SHINE HOLIDAYS for ${service.title}`}
+                      >
+                        <Phone className="h-3.5 w-3.5 text-[#E6C35C]" />
+                        <span>Call</span>
+                      </a>
+                    </div>
 
                     {/* Quick Specs modal toggle for Urbania */}
-                    {(service.id === 'urbania-12' || service.id === 'urbania-16') && (
+                    {(service.id === 'urbania-12' || service.id === 'urbania-16') ? (
                       <button
                         onClick={() => setSelectedModalVehicle(service)}
-                        className="text-xs font-medium text-[#16213E]/60 hover:text-[#B5922A] transition-colors flex items-center gap-1 cursor-pointer"
+                        className="text-xs font-medium text-[#16213E]/60 hover:text-[#B5922A] transition-colors flex items-center gap-1 cursor-pointer ml-auto"
                       >
                         <Eye className="h-3.5 w-3.5" />
                         <span>View Specs</span>
                       </button>
+                    ) : (
+                      <span className="text-xs font-medium text-[#B5922A] bg-[#D4AF37]/10 px-2.5 py-1 rounded-full border border-[#D4AF37]/30 ml-auto">
+                        Special Rate
+                      </span>
                     )}
                   </div>
 
