@@ -105,6 +105,15 @@ Please confirm coach availability and provide estimated itinerary quotation.`;
             
             <div className="p-8 rounded-3xl bg-[#0D0F14] border border-white/10 shadow-2xl space-y-6">
               
+              {/* Official Logo Plaque Badge */}
+              <div className="bg-white px-4 py-2 rounded-xl border border-[#D4AF37]/60 shadow-[0_4px_16px_rgba(0,0,0,0.5)] inline-flex items-center">
+                <img
+                  src="/images/logo/logo-horizontal-bold-crisp.png"
+                  alt="SHINE HOLIDAYS - 365 Days 365 Ways...!"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+
               <div>
                 <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
                   Customer Assistance

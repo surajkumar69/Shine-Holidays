@@ -75,31 +75,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo / Brand - Ultra-Clear & Prominent Presentation */}
-            <a href="#home" className="flex items-center gap-3 sm:gap-4 group">
-              
-              {/* Official Logo Badge Container (High-contrast, razor-sharp on all screens) */}
-              <div className="bg-white px-2.5 sm:px-3.5 py-1.5 rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.65)] border border-[#D4AF37]/50 flex items-center justify-center flex-shrink-0 group-hover:border-[#D4AF37] group-hover:shadow-[0_4px_24px_rgba(212,175,55,0.35)] transition-all">
+            {/* Logo / Brand - Official Luxury Automotive Presentation */}
+            <a href="#home" className="flex items-center group flex-shrink-0" title="SHINE HOLIDAYS - Home">
+              {/* Official Logo Plaque Badge (Razor-sharp, high-contrast, perfectly proportioned) */}
+              <div className="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.55)] border border-[#D4AF37]/60 group-hover:border-[#D4AF37] group-hover:shadow-[0_4px_24px_rgba(212,175,55,0.4)] transition-all flex items-center justify-center">
                 <img
-                  src="/images/logo/logo-badge-white.png"
-                  alt="SHINE HOLIDAYS Official Logo"
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  src="/images/logo/logo-horizontal-bold-crisp.png"
+                  alt="SHINE HOLIDAYS - 365 Days 365 Ways...!"
+                  className="h-9 sm:h-11 md:h-12 w-auto max-w-[210px] sm:max-w-[260px] md:max-w-[290px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-              </div>
-
-              {/* Bold, Elegant Typography for Maximum Readability */}
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-cinzel text-lg sm:text-2xl font-bold tracking-wider text-white group-hover:text-[#D4AF37] transition-colors leading-none">
-                    SHINE <span className="text-[#D4AF37]">HOLIDAYS</span>
-                  </span>
-                </div>
-                <span className="text-[9px] sm:text-[11px] uppercase tracking-[0.22em] text-[#D4AF37] font-semibold mt-1">
-                  365 Days 365 Ways...!
-                </span>
-                <span className="text-[9px] uppercase tracking-wider text-neutral-400 font-medium hidden lg:block -mt-0.5">
-                  Bangalore & Mysore Luxury Urbania
-                </span>
               </div>
             </a>
 
@@ -164,20 +148,20 @@ export default function Header() {
           <div className="md:hidden bg-[#0A0B0E]/98 border-b border-white/10 px-5 pt-5 pb-7 mt-3 space-y-4 backdrop-blur-2xl animate-fadeIn">
             
             {/* Mobile Brand Summary Card */}
-            <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
-              <div className="bg-white p-1.5 rounded-lg shadow-sm">
+            <div className="p-3.5 rounded-2xl bg-[#0F1117] border border-[#D4AF37]/30 flex items-center justify-between shadow-xl">
+              <div className="bg-white px-3 py-1.5 rounded-xl border border-[#D4AF37]/50 shadow-md">
                 <img
-                  src="/images/logo/logo-badge-white.png"
+                  src="/images/logo/logo-horizontal-bold-crisp.png"
                   alt="SHINE HOLIDAYS"
                   className="h-9 w-auto object-contain"
                 />
               </div>
-              <div>
-                <span className="font-cinzel text-base font-bold text-white block">
-                  SHINE <span className="text-[#D4AF37]">HOLIDAYS</span>
+              <div className="text-right">
+                <span className="text-[10px] text-[#D4AF37] uppercase tracking-wider font-semibold block">
+                  Bangalore & Mysore
                 </span>
-                <span className="text-[10px] text-[#D4AF37] uppercase tracking-wider font-semibold">
-                  Bangalore & Mysore • ₹35/KM
+                <span className="font-cinzel text-xs font-bold text-white block">
+                  ₹35 / KM
                 </span>
               </div>
             </div>

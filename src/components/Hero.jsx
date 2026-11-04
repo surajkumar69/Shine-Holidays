@@ -119,11 +119,31 @@ export default function Hero() {
             <div className="border-l border-white/10 pl-3 sm:pl-4">
               <div className="text-[10px] uppercase text-neutral-400 tracking-wider">Service Hubs</div>
               <div className="font-cinzel text-xs sm:text-sm font-semibold text-white mt-0.5">BLR & MYS</div>
-              <div className="text-[10px] text-[#D4AF37]">Bangalore & Mysore</div>
+              <div className="text-[10px] text-[#D4AF37]">₹35 / KM Flat Rate</div>
             </div>
           </div>
-
         </div>
+
+        {/* Inset Vehicle Identification Plaque (Floating on desktop right) */}
+        <div className="hidden lg:block absolute bottom-12 right-6 xl:right-10 max-w-sm p-4 sm:p-5 rounded-2xl bg-[#090A0E]/85 backdrop-blur-xl border border-[#D4AF37]/45 shadow-[0_16px_40px_rgba(0,0,0,0.85)]">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] flex-shrink-0">
+              <Shield className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold block">
+                Flagship Vehicle
+              </span>
+              <div className="font-cinzel text-sm sm:text-base font-bold text-white tracking-wide">
+                Force Urbania Luxury Coach
+              </div>
+              <div className="text-[11px] text-neutral-300 font-light mt-0.5">
+                Chauffeur Driven • Bangalore & Mysore • ₹35/KM
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

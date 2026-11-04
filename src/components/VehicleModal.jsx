@@ -49,12 +49,19 @@ export default function VehicleModal({ vehicle, onClose, onBookNow }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/10 bg-black/40">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 bg-black/50">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="hidden sm:inline-flex bg-white px-2.5 py-1 rounded-lg border border-[#D4AF37]/50 shadow-sm">
+              <img
+                src="/images/logo/logo-horizontal-bold-crisp.png"
+                alt="SHINE HOLIDAYS"
+                className="h-7 w-auto object-contain"
+              />
+            </div>
             <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30">
               {vehicle.seating} Seater
             </span>
-            <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white">
+            <h3 className="font-cinzel text-lg sm:text-2xl font-bold text-white">
               {vehicle.title}
             </h3>
           </div>

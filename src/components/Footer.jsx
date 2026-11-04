@@ -28,22 +28,13 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-5">
             
             <div className="flex items-center gap-4">
-              {/* Official Logo Badge Container */}
-              <div className="bg-white p-3 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.65)] border border-[#D4AF37]/50 inline-flex items-center justify-center">
+              {/* Official Logo Plaque Badge Container */}
+              <div className="bg-white px-5 py-3 rounded-2xl shadow-[0_6px_28px_rgba(0,0,0,0.75)] border border-[#D4AF37]/60 inline-flex items-center justify-center">
                 <img
-                  src="/images/logo/logo-badge-white.png"
-                  alt="SHINE HOLIDAYS Official Logo"
-                  className="h-14 sm:h-16 w-auto object-contain"
+                  src="/images/logo/logo-horizontal-bold-crisp.png"
+                  alt="SHINE HOLIDAYS - 365 Days 365 Ways...!"
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
-              </div>
-
-              <div>
-                <span className="font-cinzel text-2xl sm:text-3xl font-bold tracking-wider text-white block">
-                  SHINE <span className="text-[#D4AF37]">HOLIDAYS</span>
-                </span>
-                <span className="text-xs uppercase tracking-[0.22em] text-[#D4AF37] font-semibold block mt-0.5">
-                  365 Days 365 Ways...!
-                </span>
               </div>
             </div>
 
